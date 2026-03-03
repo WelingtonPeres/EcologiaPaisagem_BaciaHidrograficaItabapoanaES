@@ -149,6 +149,7 @@ No mapa, as áreas de alta conectividade concentram-se onde os fragmentos estão
 
 ---
 
+
 > **NOTE**  
 > Cada mapa inclui legenda, escala gráfica, norte e demais elementos cartográficos. Versões em PDF e GeoTIFF em `Resultados/Maps/PDF/` e `Resultados/Maps/Img_tif/`. Detalhes da produção em [docs/Procedimentos/procedimentos.md](docs/Procedimentos/procedimentos.md) (Etapas 18 a 20).
 

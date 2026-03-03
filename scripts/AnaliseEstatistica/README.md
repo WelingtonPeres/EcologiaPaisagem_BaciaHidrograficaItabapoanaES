@@ -38,3 +38,5 @@ Os PNGs são gravados em **`Resultados/Histogramas/`** (a pasta é criada automa
 - **Dados:** Os scripts leem o CSV em `data/MataNativa_Mesclagem_Fragmentos.csv`. Confira se esse arquivo existe e se as colunas usadas estão presentes (`AREA_HA`, `INDICE_FORMA`, `ISOLAMENTO_M`, `AREA_NUCLEAR_HA` ou `COREAREA_HE`, etc.). Se o CSV tiver nomes de coluna diferentes, será preciso ajustar o módulo correspondente.
 - **Pasta de trabalho:** Execute sempre a partir da pasta `Histograma` (onde estão `main_histogramas.py` e os `plotarHistograma_*.py`), para que os imports e o caminho dos dados funcionem.
 - **Python:** Use um ambiente com `pandas` e `matplotlib` instalados. Em caso de erro de módulo não encontrado, ative o ambiente correto ou instale as dependências.
+
+
