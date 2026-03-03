@@ -1,87 +1,35 @@
-# Fontes de Dados
+# Fontes de dados
 
-Catálogo das fontes de dados do projeto Ecologia da Paisagem da Bacia do Itabapoana (ES). Para a convenção de nomes dos arquivos, ver `nomenclatura.md`.
+Catálogo das fontes de dados utilizadas no projeto Ecologia da Paisagem da Bacia do Itabapoana (ES). Os dados são organizados em `Projeto/Dados/` (ver [nomenclatura.md](nomenclatura.md)).
 
----
+## IBGE
 
-## 1. Malha Municipal — Municípios do Espírito Santo
+**Malhas territoriais**
 
-| Campo | Informação |
-|-------|------------|
-| **Arquivo** | `Dados/Dados_Brutos/ES_Municipios_2024_Completo/` |
-| **Fonte** | IBGE — Instituto Brasileiro de Geografia e Estatística |
-| **Produto** | Malha Municipal Digital (MMD) 2024 |
-| **Unidade** | Municípios do Espírito Santo |
-| **Formato** | Shapefile (SHP) |
-| **Sistema de referência original** | SIRGAS 2000 (geográfico) |
-| **Escala** | 1:250.000 |
-| **Link** | [IBGE — Malhas Territoriais](https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html) |
+- **Municípios do Espírito Santo:** Malhas municipais 2024 (versão completa).  
+  Link: <https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html>  
+  No projeto: `Projeto/Dados/Dados_Brutos/ES_Municipios_2024_Completo/`
 
-*Citação em `referencias.md`*
+- **Unidades da Federação:** Malhas de UFs 2024 (versão completa).  
+  Link: <https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html>  
+  No projeto: `Projeto/Dados/Dados_Brutos/BR_UF_2024_Completo/`
 
----
+## ANA / SNIRH
 
-## 2. Divisão Hidrográfica Nacional — Bacias Hidrográficas
+**Bacias hidrográficas**
 
-| Campo | Informação |
-|-------|------------|
-| **Arquivo** | `Dados/Dados_Brutos/BaciasHidrograficas_Completo/` |
-| **Fonte** | ANA — Agência Nacional de Águas e Saneamento Básico / SNIRH |
-| **Produto** | Divisão Hidrográfica Nacional (DHN250) |
-| **Unidade** | Macrorregiões (macro_RH), Mesorregiões (meso_RH), Microrregiões (micro_RH) |
-| **Formato** | Shapefile (SHP) |
-| **Sistema de referência original** | SIRGAS 2000 (geográfico, EPSG:4674) |
-| **Escala** | 1:250.000 |
-| **Link** | [Catálogo SNIRH — Divisão Hidrográfica Nacional](https://metadados.snirh.gov.br/geonetwork/srv/por/catalog.search#/metadata/fb87343a-cc52-4a36-b6c5-1fe05f4fe98c) |
+- **Divisão hidrográfica (microrregiões):** Conjunto de shapes de bacias hidrográficas (micro e mesorregiões).  
+  Metadados: <https://metadados.snirh.gov.br/geonetwork/srv/por/catalog.search#/metadata/fb87343a-cc52-4a36-b6c5-1fe05f4fe98c>  
+  No projeto: `Projeto/Dados/Dados_Brutos/BaciasHidrograficas_Completo/` (extração da Bacia do Itabapoana a partir de `micro_RH`).
 
-*Citação em `referencias.md`*
+## IJSN / Geobases (Espírito Santo)
+
+**Uso e cobertura do solo**
+
+- **Mapeamento de uso e cobertura do solo do ES (2019-2020):** Baseada no Ortofotomosaico ES 2019-2020 (imagens Kompsat 3/3A). Inclui as classes Mata Nativa e Mata Nativa em Estágio Inicial de Regeneração, utilizadas nas análises de fragmentos.  
+  Link: <https://geobases.es.gov.br/links-para-img-kpst-19-20>  
+  No projeto: `Projeto/Dados/Dados_Brutos/ijsn_mapeamento_uso_solo_2019_2020/`
 
 ---
 
-## 3. Malha Municipal — Unidades da Federação (Brasil)
-
-| Campo | Informação |
-|-------|------------|
-| **Arquivo** | `Dados/Dados_Brutos/BR_UF_2024_Completo/` |
-| **Fonte** | IBGE — Instituto Brasileiro de Geografia e Estatística |
-| **Produto** | Malha Municipal Digital (MMD) 2024 |
-| **Unidade** | Unidades da Federação (27 estados + DF) |
-| **Formato** | Shapefile (SHP) |
-| **Sistema de referência original** | SIRGAS 2000 (geográfico) |
-| **Escala** | 1:250.000 |
-| **Link** | [IBGE — Malhas Territoriais](https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html) |
-
-*Citação em `referencias.md`*
-
-**Uso:** Limites estaduais. Reprojetar para UTM 24S antes das análises.
-
----
-
-## 4. Uso e Cobertura do Solo — Espírito Santo 2019-2020
-
-| Campo | Informação |
-|-------|------------|
-| **Arquivo** | `Dados/Dados_Brutos/ijsn_mapeamento_uso_solo_2019_2020/` |
-| **Fonte** | IJSN — Instituto Jones dos Santos Neves / Geobases ES |
-| **Produto** | Mapeamento de Uso e Cobertura do Solo ES 2019-2020 |
-| **Unidade** | Estado do Espírito Santo |
-| **Formato** | Shapefile (SHP) |
-| **Sistema de referência original** | SIRGAS 2000 (geográfico) |
-| **Escala** | 1:25.000 (baseado em imagens Kompsat 3/3A) |
-| **Link** | [Geobases — IJSN Ortofotomosaico e Uso do Solo](https://geobases.es.gov.br/links-para-img-kpst-19-20) |
-
-*Citação em `referencias.md`*
-
-**Classes do projeto:** Mata Nativa, Mata Nativa em Estágio Inicial de Regeneração (Ortofotomosaico ES 2019-2020).
-
----
-
-## 5. Sistema de Coordenadas do Projeto
-
-| Parâmetro | Valor |
-|-----------|-------|
-| **CRS** | SIRGAS 2000 / UTM zone 24S |
-| **EPSG** | 31984 |
-| **Proj4** | `+proj=utm +zone=24 +south +ellps=GRS80 +units=m +no_defs` |
-
-Todas as camadas devem estar neste CRS para consistência nas análises.
+**CRS adotado nas análises:** SIRGAS 2000 / UTM zone 24S (EPSG:31984). Camadas em outros SRC foram reprojetadas para esse CRS antes do processamento.

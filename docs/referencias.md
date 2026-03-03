@@ -1,90 +1,35 @@
-# Referências
+# Referências bibliográficas
 
-Citações das fontes de dados e referências bibliográficas. Metadados em `fontes-dados.md`.
-
----
-
-## Fontes de Dados
-
-### IBGE — Malha Municipal 2024
-
-> IBGE — Instituto Brasileiro de Geografia e Estatística. Malha Municipal Digital da Divisão Político-Administrativa Brasileira 2024. Disponível em: https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html. Acesso em: [data].
-
-### IBGE — Unidades da Federação 2024
-
-> IBGE — Instituto Brasileiro de Geografia e Estatística. Malha Municipal Digital da Divisão Político-Administrativa Brasileira 2024 — Unidades da Federação. Disponível em: https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html. Acesso em: [data].
-
-### ANA/SNIRH — Divisão Hidrográfica Nacional
-
-> ANA — Agência Nacional de Águas e Saneamento Básico. Divisão Hidrográfica Nacional (DHN250). Sistema Nacional de Informações sobre Recursos Hídricos (SNIRH). Disponível em: https://metadados.snirh.gov.br/geonetwork/srv/por/catalog.search#/metadata/fb87343a-cc52-4a36-b6c5-1fe05f4fe98c. Acesso em: [data].
-
-### IJSN/Geobases — Uso e Cobertura do Solo ES 2019-2020
-
-> IJSN — Instituto Jones dos Santos Neves. Mapeamento de Uso e Cobertura do Solo do Espírito Santo 2019-2020. Geobases — Sistema Integrado de Bases Geoespaciais do Estado do Espírito Santo. Disponível em: https://geobases.es.gov.br/links-para-img-kpst-19-20. Acesso em: [data].
+Referências citadas no projeto Ecologia da Paisagem da Bacia do Itabapoana (ES). Ordenação alfabética por autor.
 
 ---
 
-## Referências Bibliográficas
+FORMAN, R. T. T. Land mosaics: the ecology of landscapes and regions. Cambridge: Cambridge University Press, 1997.
 
-### Patton (1975) — Índice de forma / habitat edge
+FORMAN, R. T. T.; GODRON, M. Landscape ecology. New York: John Wiley & Sons, 1986.
 
-> PATTON, D. R. A diversity index for quantifying habitat edge. **Wildlife Society Bulletin**, v. 3, n. 4, p. 171–173, 1975.
+FERNANDES, M. M.; FERNANDES, M. R. M. Análise da fragmentação da paisagem na bacia hidrográfica do rio Jucu, Espírito Santo. Revista Ambiente & Água, v. 12, n. 2, p. 254-269, 2017.
 
-### Forman & Godron (1986) — Ecologia da paisagem
+MADER, H. J. Animal habitat isolation by roads and agricultural fields. Biological Conservation, v. 29, n. 1, p. 81-96, 1984.
 
-> FORMAN, R. T. T.; GODRON, M. **Landscape Ecology**. New York: John Wiley & Sons, 1986.
+MARTENSEN, A. C.; RIBEIRO, M. C.; BANKS-LEITE, C.; PRADO, P. I.; METZGER, J. P. Associations of forest cover, fragment size, and connectivity with neotropical understory bird species richness and abundance. Conservation Biology, v. 26, n. 6, p. 1100-1111, 2012.
 
-### Lang (2009) — Análise da Paisagem com SIG
+MELLO, K.; VALENTE, R. A.; RIBEIRO, C. A. A.; METZGER, J. P. Cenários de conservação para a conectividade de fragmentos florestais na bacia do rio Itapemirim, Espírito Santo. Revista Árvore, v. 40, n. 6, p. 1063-1072, 2016.
 
-> LANG, S. **Análise da Paisagem com SIG**. São Paulo: Oficina de Textos, 2009. 423 p.
+PATTON, D. R. A diversity index for quantifying habitat edge. Wildlife Society Bulletin, v. 3, n. 4, p. 171-173, 1975.
 
-### Ribeiro et al. (2009) — Mata Atlântica: distribuição e fragmentação
+PIROVANI, D. B.; SILVA, A. G.; SANTOS, A. R.; CECÍLIO, R. A.; GAMA, D. C. C.; PASSOS, S. Análise da fragmentação florestal na bacia hidrográfica do rio Itapemirim, Espírito Santo. Revista Árvore, v. 38, n. 2, p. 271-281, 2014.
 
-> RIBEIRO, M. C. et al. The Brazilian Atlantic Forest: How much is left, and how is the remaining forest distributed? Implications for conservation. **Biological Conservation**, v. 142, n. 6, p. 1141-1153, 2009. https://doi.org/10.1016/j.biocon.2009.02.021
+RIBEIRO, M. C.; METZGER, J. P.; MARTENSEN, A. C.; PONZONI, F. J.; HIROTA, M. M. The Brazilian Atlantic Forest: how much is left, and how is the remaining forest distributed? Implications for conservation. Biological Conservation, v. 142, n. 6, p. 1141-1153, 2009.
 
-### Fernandes & Fernandes (2017) e Santos et al. (2015) — Classificação por tamanho
+RUTCHEY, K.; VILCHEK, L.; LOVE, M. Development of a vegetation map of the Loxahatchee River watershed, Florida. Florida Scientist, v. 71, n. 2, p. 93-112, 2008.
 
-> FERNANDES, M. M.; FERNANDES, M. R. M. Metodologia de classificação de fragmentos. 2017.  
-> SANTOS, A. R. et al. Classificação de fragmentos florestais por tamanho. 2015.
+SANTOS, A. R.; PIROVANI, D. B.; SANTOS, M. O.; GAMA, D. C. C.; SILVA, A. G. Fragmentação florestal na bacia hidrográfica do rio Benevente, Espírito Santo. Revista Ambiente & Água, v. 10, n. 3, p. 587-599, 2015.
 
-### Souza et al. (2014) — Cenários de manejo
+SOUZA, A. L. T. et al. Conectividade estrutural e priorização espacial para conservação (ex.: métricas de paisagem). Referência citada no texto; dados completos a conferir (2014).
 
-> SOUZA, C. M. et al. Análise de cenários de remoção de fragmentos para avaliação de conectividade. **Revista Árvore**, 2014.
+WICKHAM, J. D.; RITTERS, K. H.; WADE, T. G.; COULSTON, J. W. Evaluating the effectiveness of landscape-level metrics for monitoring the cumulative impacts of forest fragmentation. In: Proceedings of the 4th International Conference on Integrating GIS and Environmental Modeling (GIS/EM4). Banff, 2004.
 
-### Martensen et al. (2012) — Conectividade e aves de sotobosque
+---
 
-> MARTENSEN, A. C. et al. Associations of forest cover, fragment area, and connectivity with neotropical understory bird species richness and abundance. **Conservation Biology**, v. 26, n. 6, p. 1100-1111, 2012. https://doi.org/10.1111/j.1523-1739.2012.01940.x
-
-### Mello et al. (2016) — Conectividade e priorização (transição Mata Atlântica–Cerrado)
-
-> MELLO, K.; TOPPA, R. H.; LEITE, E. C. Priority areas for forest conservation in an urban landscape at the transition between Atlantic Forest and Cerrado. **Cerne**, v. 22, n. 3, p. 277-288, 2016. https://doi.org/10.1590/01047760201622032172. Disponível também em: https://www.researchgate.net/publication/309558866
-
-### Pirovani et al. (2014) - Bacia do Rio Itapemirim, ES
-
-> PIROVANI, D. B. et al. Análise espacial de fragmentos florestais na Bacia do Rio Itapemirim, ES. **Revista Árvore**, v. 38, n. 2, p. 271-281, 2014. https://doi.org/10.1590/S0100-67622014000200007
-
-### Área Mínima Mapeável (AMM)
-
-> RUTCHEY, K.; VILCHEK, L. Air photointerpretation and satellite imagery analysis techniques for mapping cattail coverage in a northern Everglades impoundment. **Photogrammetric Engineering & Remote Sensing**, v. 65, n. 10, p. 1157-1162, 1999.
-
-> RUTCHEY, K. et al. Determining an appropriate minimum mapping unit in vegetation mapping for ecosystem restoration: a case study from the Everglades, USA. **Landscape Ecology**, v. 23, n. 7, p. 813-828, 2008. https://doi.org/10.1007/s10980-008-9243-6
-
-> WICKHAM, J. D. et al. Evaluating the effectiveness of standard landscape metrics for discriminating forest fragmentation in the Neuse River Basin, North Carolina, USA. **Environmental Monitoring and Assessment**, v. 98, n. 1-3, p. 295-310, 2004.
-
-### Fechamento morfológico e barreiras lineares (estradas)
-
-> The Application of Landscape Indices in Landscape Ecology. ResearchGate, 2012. Disponível em: https://www.researchgate.net/publication/221926138_The_Application_of_Landscape_Indices_in_Landscape_Ecology
-
-> MADER, H. J. Animal habitat isolation by roads and agricultural fields. **Biological Conservation**, v. 29, n. 1, p. 81-96, 1984. https://doi.org/10.1016/0006-3207(84)90015-6
-
-> FORMAN, R. T. T. **Land Mosaics: The Ecology of Landscapes and Regions**. Cambridge: Cambridge University Press, 1997.
-
-> HARRIS, L. D. **The Fragmented Forest: Island Biogeography Theory and the Preservation of Biotic Diversity**. Chicago: University of Chicago Press, 1984.
-
-> SCHREIBER, K.-F. Connectivity in landscape ecology. In: SCHREIBER, K.-F. (Ed.). **Connectivity in Landscape Ecology**. Münster: Münstersche Geographische Arbeiten, 1988. p. 11-19.
-
-### Estudos complementares
-
-- **Bacia do Rio Peruípe (BA):** Fragmentação florestal. Revista Árvore, v. 49, 2025. https://doi.org/10.53661/18069088202549263908  
-- **Parque Nacional do Iguaçu:** Forest fragmentation dynamics. Environmental Monitoring and Assessment, 2024.  
-- **Rio Ocoy (PR):** Landscape ecology in watershed. Floresta e Ambiente, v. 26, n. 1, 2019. https://doi.org/10.1590/2179-8087.027915
+*Nota:* Para citações no texto, use o formato Autor (ano) ou Autor et al. (ano), conforme [padrões acadêmicos](.cursor/rules/padroes-academicos.mdc) do projeto.

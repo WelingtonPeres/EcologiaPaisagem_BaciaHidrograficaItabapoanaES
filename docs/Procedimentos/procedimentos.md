@@ -8,7 +8,7 @@ Guia do que foi feito no projeto e onde encontrar cada resultado.
 
 | Item | Descrição |
 |------|-----------|
-| **Objetivo** | Analisar a Ecologia da Paisagem da Bacia do Itabapoana (ES) |
+| **Objetivo** | Caracterizar a estrutura da paisagem florestal dos fragmentos na porção capixaba da Bacia do Itabapoana |
 | **Foco** | Fragmentos de Mata Nativa e Mata Nativa em Estágio Inicial de Regeneração |
 | **CRS** | SIRGAS 2000 / UTM 24S (EPSG:31984) |
 | **Documentação** | `fontes-dados.md` · `nomenclatura.md` · `referencias.md` |
@@ -24,11 +24,11 @@ Guia do que foi feito no projeto e onde encontrar cada resultado.
 **Onde está:**
 ```
 Ecologia_Paisagem/
-├── docs/          → Documentação
-├── Dados/         → Dados geográficos
-├── scripts/       → Código de análise
-├── resultados/    → Outputs
-└── figuras/       → Figuras para publicação
+├── docs/           → Documentação (procedimentos, fontes, referências)
+├── data/           → Dados tabulares (ex.: CSV dos fragmentos)
+├── scripts/        → Código de análise (AnaliseEstatistica/Histograma, etc.)
+├── Resultados/     → Outputs (Maps/, Histogramas/)
+└── Projeto/Dados/  → Dados geográficos (conforme docs/fontes-dados.md)
 ```
 
 **Configuração do Git LFS (arquivos GIS grandes):**
@@ -60,10 +60,10 @@ Para versionar arquivos geográficos sem exceder o limite do GitHub (100 MB por 
 
 | Dado | Localização | Fonte |
 |------|-------------|-------|
-| Municípios do ES | `Dados/Dados_Brutos/ES_Municipios_2024_Completo/` | [IBGE](https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html) |
-| Unidades da Federação | `Dados/Dados_Brutos/BR_UF_2024_Completo/` | [IBGE](https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html) |
-| Bacias hidrográficas (todas) | `Dados/Dados_Brutos/BaciasHidrograficas_Completo/` | [ANA/SNIRH](https://metadados.snirh.gov.br/geonetwork/srv/por/catalog.search#/metadata/fb87343a-cc52-4a36-b6c5-1fe05f4fe98c) |
-| Uso e cobertura do solo (ES 2019-2020) | `Dados/Dados_Brutos/ijsn_mapeamento_uso_solo_2019_2020/` | [Geobases/IJSN](https://geobases.es.gov.br/links-para-img-kpst-19-20) |
+| Municípios do ES | `Projeto/Dados/Dados_Brutos/ES_Municipios_2024_Completo/` | [IBGE](https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html) |
+| Unidades da Federação | `Projeto/Dados/Dados_Brutos/BR_UF_2024_Completo/` | [IBGE](https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html) |
+| Bacias hidrográficas (todas) | `Projeto/Dados/Dados_Brutos/BaciasHidrograficas_Completo/` | [ANA/SNIRH](https://metadados.snirh.gov.br/geonetwork/srv/por/catalog.search#/metadata/fb87343a-cc52-4a36-b6c5-1fe05f4fe98c) |
+| Uso e cobertura do solo (ES 2019-2020) | `Projeto/Dados/Dados_Brutos/ijsn_mapeamento_uso_solo_2019_2020/` | [Geobases/IJSN](https://geobases.es.gov.br/links-para-img-kpst-19-20) |
 
 **Convenção de nomenclatura:** Arquivos reprojetados para UTM 24S recebem o sufixo `_UTM` (ex.: `nome_original_UTM.gpkg`).
 
@@ -75,7 +75,7 @@ Para versionar arquivos geográficos sem exceder o limite do GitHub (100 MB por 
 
 | Etapa | Origem | Destino |
 |-------|--------|---------|
-| Extração | `Dados_Brutos/BaciasHidrograficas_Completo/micro_RH/micro_RH.shp` | `Dados/Recortes_Bacia/Bacia_BH_Itabapoana_AreaEstudo/Bacia_BH_Itabapoana_AreaEstudo_4674.shp` |
+| Extração | `Projeto/Dados/Dados_Brutos/BaciasHidrograficas_Completo/micro_RH/micro_RH.shp` | `Projeto/Dados/Recortes_Bacia/Bacia_BH_Itabapoana_AreaEstudo/Bacia_BH_Itabapoana_AreaEstudo_4674.shp` |
 | Reprojeção | Shape em SIRGAS 2000 (EPSG:4674) | `Bacia_BH_Itabapoana_AreaEstudo_UTM.gpkg` (UTM 24S) |
 
 **1. Extração:** Seleção da microrregião correspondente à Bacia do Itabapoana no QGIS e exportação em nova camada.
@@ -88,7 +88,7 @@ Para versionar arquivos geográficos sem exceder o limite do GitHub (100 MB por 
 4. Na janela que abrir:
    - **Camada de entrada:** O shapefile da Bacia (em EPSG:4674)
    - **SRC Alvo:** Clique no globinho à direita e escolha **EPSG:31984 — SIRGAS 2000 / UTM zone 24S**
-   - **Reprojetado:** Salve em arquivo novo (`...` > Salvar no arquivo). **Nomenclatura:** `[Dados]_[Recorte]_[Objetivo]_[CRS]` (ex.: `Bacia_BH_Itabapoana_AreaEstudo_UTM.gpkg` em `Dados/Recortes_Bacia/Bacia_BH_Itabapoana_AreaEstudo/`)
+   - **Reprojetado:** Salve em arquivo novo (`...` > Salvar no arquivo). **Nomenclatura:** `[Dados]_[Recorte]_[Objetivo]_[CRS]` (ex.: `Bacia_BH_Itabapoana_AreaEstudo_UTM.gpkg` em `Projeto/Dados/Recortes_Bacia/Bacia_BH_Itabapoana_AreaEstudo/`)
 
 ---
 
@@ -115,7 +115,7 @@ Para versionar arquivos geográficos sem exceder o limite do GitHub (100 MB por 
 
 | Dado | Localização | Fonte |
 |------|-------------|-------|
-| Uso e cobertura do solo ES 2019-2020 | `Dados/Dados_Brutos/ijsn_mapeamento_uso_solo_2019_2020/` | [Geobases — IJSN](https://geobases.es.gov.br/links-para-img-kpst-19-20) |
+| Uso e cobertura do solo ES 2019-2020 | `Projeto/Dados/Dados_Brutos/ijsn_mapeamento_uso_solo_2019_2020/` | [Geobases — IJSN](https://geobases.es.gov.br/links-para-img-kpst-19-20) |
 
 **O que contém:** Shapefile com classes de uso do solo baseado na interpretação do Ortofotomosaico ES 2019-2020 (imagens Kompsat 3/3A). Inclui as classes **Mata Nativa** e **Mata Nativa em Estágio Inicial de Regeneração**, que são o foco das análises do projeto.
 
@@ -129,7 +129,7 @@ Para versionar arquivos geográficos sem exceder o limite do GitHub (100 MB por 
 |-------------------|-------------------|-----------|
 | `ijsn_mapeamento_uso_solo_2019_2020` (uso do solo ES) | Bacia do Itabapoana no ES (`Bacia_BH_Itabapoana_AreaEstudo_UTM` ou interseção Municípios ∩ Bacia) | `UsoSolo_BH_Itabapoana_ES_Recorte_UTM` |
 
-**Onde está:** `Dados/Recortes_Bacia/UsoSolo_BH_Itabapoana_ES_Recorte/`
+**Onde está:** `Projeto/Dados/Recortes_Bacia/UsoSolo_BH_Itabapoana_ES_Recorte/`
 
 ![Uso do solo recortado pela Bacia do Itabapoana - QGIS](uso_solo_recortado_bacia_itabapoana_es.png)
 
@@ -141,15 +141,15 @@ Para versionar arquivos geográficos sem exceder o limite do GitHub (100 MB por 
 
 **O que foi feito:** Extração das classes **Mata Nativa** (código 1) e **Mata Nativa em Estágio Inicial de Regeneração** (código 2) do recorte de uso do solo (`UsoSolo_BH_Itabapoana_ES_Recorte_UTM`). As duas classes ficam no **mesmo shape**.
 
-**Onde está:** `Dados/Recortes_Bacia/MataNativa_BH_Itabapoana_ES_Extracao/`
+**Onde está:** `Projeto/Dados/Recortes_Bacia/MataNativa_BH_Itabapoana_ES_Extracao/`
 
-![Extração Mata Nativa — Bacia do Itabapoana ES](extracao_mata_nativa_bacia_itabapoana_es.png)
+![Extração Mata Nativa - Bacia do Itabapoana ES](extracao_mata_nativa_bacia_itabapoana_es.png)
 
 **Como foi feito (QGIS):**
 1. A camada `UsoSolo_BH_Itabapoana_ES_Recorte_UTM` foi aberta
 2. Foi utilizada a ferramenta *Selecionar feições por expressão* (clique direito na camada → *Selecionar*)
 3. A expressão `"Código" IN (1, 2)` foi aplicada — em que **1** = Mata Nativa e **2** = Mata Nativa em Estágio Inicial de Regeneração
-4. Com as feições selecionadas, a exportação foi feita para `Dados/Recortes_Bacia/MataNativa_BH_Itabapoana_ES_Extracao/` (*Exportar* → *Salvar feições selecionadas como...*)
+4. Com as feições selecionadas, a exportação foi feita para `Projeto/Dados/Recortes_Bacia/MataNativa_BH_Itabapoana_ES_Extracao/` (*Exportar* → *Salvar feições selecionadas como...*)
 
 **Alternativa:** Ferramenta *Extrair por atributo* na Caixa de Ferramentas (Vetor geral > Extrair por atributo) — campo `Código`, valores 1 e 2.
 
@@ -159,7 +159,7 @@ Para versionar arquivos geográficos sem exceder o limite do GitHub (100 MB por 
 
 **O que foi feito:** Unificação das classes Mata Nativa (código 1) e Mata em Estágio Inicial (código 2) em um único shape de fragmentos. Polígonos que se tocam foram mesclados; cada área desconectada virou um fragmento individual.
 
-**Onde está:** `Dados/Fragmentos_Analise/Fragmentos_MataNativa_BH_I_ES.gpkg`
+**Onde está:** `Projeto/Dados/Fragmentos_Analise/Fragmentos_MataNativa_BH_I_ES.gpkg`
 
 **Passo 1: Mesclar (Dissolve sem filtros)**
 
@@ -177,7 +177,7 @@ Objetivo: separar geograficamente — cada área desconectada vira uma linha na 
 
 1. O menu **Vetor** → **Ferramentas de Geometria** → **De múltiplas partes para partes simples** (Multipart to singlepart) foi acessado
 2. `Mata_Mesclada_Temp.shp` (resultado do Passo 1) foi utilizado como entrada
-3. O resultado foi salvo em `Dados/Fragmentos_Analise/Fragmentos_MataNativa_BH_I_ES.gpkg`
+3. O resultado foi salvo em `Projeto/Dados/Fragmentos_Analise/Fragmentos_MataNativa_BH_I_ES.gpkg`
 4. A ferramenta foi executada
 
 ---
@@ -256,7 +256,7 @@ Com base na margem de incerteza metodológica inserida pela correção geométri
 | Pequeno       | 5–10      |
 | Médio         | 10–100    |
 | Grande        | 100–250   |
-| Muito grande  | > 250     |
+| Muito grande  | ≥ 250     |
 
 **Interpretação ecológica:** O limiar de 50 ha é relevante — Ribeiro et al. (2009) indicam que mais de 80% dos fragmentos da Mata Atlântica são menores que 50 ha e que fragmentos nessa faixa são insuficientes para manter a maioria das espécies florestais.
 
@@ -442,7 +442,7 @@ END
 
 **Resultado — Tabela de atributos (MataNativa_Mesclada):** Campos `AREA_HA`, `TAMANHO`, `PERIMETRO_M`, `FORMA`, `INDICE_FORMA`, `COREAREA_HE`, `CONECTIVIDADE`, `ISOLAMENTO_M`.
 
-![Tabela de atributos — MataNativa_Mesclada (5383 feições)](tabela_atributos_fragmentos_mata_nativa.png)
+![Tabela de atributos - MataNativa_Mesclada (5383 feições)](tabela_atributos_fragmentos_mata_nativa.png)
 
 ---
 
@@ -471,89 +471,93 @@ array_to_string(overlay_intersects('Municipios_ES_Analise_UTM', "NM_MUN"))
 
 ---
 
-### Etapa 18. Análise estatística: histograma da área (AREA_HA) ✅
+### Etapa 18. Análise estatística: histogramas (área, forma, conectividade, área nuclear) ✅
 
-**O que foi feito:** Criação de script Python para plotar histogramas da variável AREA_HA (área em hectares dos fragmentos), usando os intervalos da classificação de tamanho (Etapa 12).
+**O que foi feito:** Criação de scripts Python para plotar histogramas das variáveis de fragmentação, com template compartilhado (`histograma_core.py`) e módulos por variável. Cada módulo usa os intervalos das classificações da metodologia (Etapas 12, 13, 16 e 14). Os histogramas de área nuclear (core area) tratam o valor zero como classe à parte ("0 em risco").
 
-**Onde está:** `scripts/AnaliseEstatistica/histograma/plotarHistograma_area_ha.py`
+**Onde está:** `scripts/AnaliseEstatistica/Histograma/`
 
-**Dados de entrada:** `MataNativa_Mesclagem_Fragmentos.csv` (ou equivalente exportado da tabela de atributos dos fragmentos), com coluna `AREA_HA`.
+**Estrutura:** Template `histograma_core.py` (funções de configuração, plotagem e salvamento); módulos `plotarHistograma_area_ha.py`, `plotarHistograma_forma.py`, `plotarHistograma_conectividade.py`, `plotarHistograma_core_area.py`; script principal `main_histogramas.py`.
 
-**Funcionalidades:**
+**Dados de entrada:** `data/MataNativa_Mesclagem_Fragmentos.csv` (exportado da tabela de atributos dos fragmentos), com colunas `AREA_HA`, `INDICE_FORMA`, `ISOLAMENTO_M`, `AREA_NUCLEAR_HA` ou `COREAREA_HE`.
 
-| Função | Descrição |
-|--------|-----------|
-| `definir_caracteristicas_histograma(**kwargs)` | Retorna dicionário com bins, labels, cores, padrões e demais parâmetros (customizável via kwargs) |
-| `plotar_histograma_normal(serie, ax, config)` | Histograma por frequência (contagem), com rótulos nas barras |
-| `plotar_histograma_densidade(serie, ax, config)` | Histograma por densidade (proporção), com rótulos em percentual |
+**Variáveis e intervalos:**
 
-**Intervalos usados (classificação TAMANHO):** [0-5], [5-10], [10-100], [100-250], [≥250] ha.
+| Variável | Coluna | Intervalos / classes |
+|----------|--------|----------------------|
+| Área (ha) | `AREA_HA` | [0-5], [5-10], [10-100], [100-250], [≥250] (classificação tamanho) |
+| Forma | `INDICE_FORMA` | Compacto, Alongado, Muito alongado (DI &lt; 1,5; 1,5–2,0; ≥ 2,0) |
+| Conectividade | `ISOLAMENTO_M` | Alta (&lt; 100 m), Média (100–500 m), Baixa (≥ 500 m) |
+| Área nuclear (ha) | `AREA_NUCLEAR_HA` ou `COREAREA_HE` | 0 (em risco); (0–1], (1–5], (5–10], (10–100], (100–500], (500–1000], (1000–2500], &gt; 2500 |
 
 **Como executar:**
 
 ```bash
-cd scripts/AnaliseEstatistica/histograma
-pip install -r ../requirements.txt
-python plotarHistograma_area_ha.py
+cd scripts/AnaliseEstatistica/Histograma
+pip install pandas matplotlib
+python main_histogramas.py --list
+python main_histogramas.py area_ha
+python main_histogramas.py forma
+python main_histogramas.py conectividade
+python main_histogramas.py core_area
+python main_histogramas.py --all
 ```
 
-**Saídas geradas:**
+Ou executar cada módulo diretamente (ex.: `python plotarHistograma_area_ha.py`).
 
-- `histograma_area_ha.png` — histograma por frequência
-- `histograma_area_ha_densidade.png` — histograma por densidade
-- Ambos com barras cinza, borda preta e frequência/percentual acima de cada barra
+**Saídas geradas:** Todos os PNGs são salvos em **`Resultados/Histogramas/`** (a pasta é criada automaticamente se não existir). Para cada variável: arquivo de frequência (ex.: `histograma_area_ha.png`) e arquivo de densidade (ex.: `histograma_area_ha_densidade.png`). Barras em cinza com borda preta; frequência ou percentual acima de cada barra.
 
-## Imagens geradas
+**Imagens geradas (exemplo: área)**
 
 ### Histograma da área dos fragmentos (frequência)
 
-![Histograma por frequência dos fragmentos - AREA_HA](../../scripts/AnaliseEstatistica/histograma/histograma_area_ha.png)
+![Histograma por frequência dos fragmentos - AREA_HA](../../Resultados/Histogramas/histograma_area_ha.png)
 
-O histograma acima mostra a distribuição da área dos fragmentos de Mata Nativa em hectares. A maioria dos fragmentos está nas classes menores, especialmente abaixo de 10 ha, com poucas unidades de grande porte.
+A distribuição da área dos fragmentos em hectares segue a classificação de tamanho. A maioria dos fragmentos está nas classes menores, especialmente abaixo de 10 ha.
 
 ### Histograma da área dos fragmentos (densidade)
 
-![Histograma por densidade dos fragmentos - AREA_HA](../../scripts/AnaliseEstatistica/histograma/histograma_area_ha_densidade.png)
+![Histograma por densidade dos fragmentos - AREA_HA](../../Resultados/Histogramas/histograma_area_ha_densidade.png)
 
 No histograma de densidade, as proporções ficam evidentes: grande parte dos fragmentos pertencem às menores classes de área, e apenas uma pequena fração alcança tamanhos superiores a 100 ha.
 
 
 ---
 
-## 📋 Próximos passos
+### Etapa 19. Aplicar classificações para visualização por cor (estilos) ✅
 
-### Etapa 19. 📋 Aplicar classificações para visualização por cor em shapes diferentes
+**O que foi feito:** Criação de estilos para a camada `Fragmentos_MataNativa_BH_I_ES` com simbologia categorizada por tamanho, forma e conectividade.
 
-**Objetivo:** Criar camadas separadas (ou estilos distintos) para visualizar fragmentos por tamanho, forma e conectividade, cada um com esquema de cores adequado.
+| Estilo | Campo | Classes |
+|--------|--------|---------|
+| Tamanho | `CLASSE_TAMANHO` ou `TAMANHO` | Muito pequeno (&lt; 5 ha), Pequeno (5–10 ha), Médio (10–100 ha), Grande (100–250 ha), Muito grande (≥ 250 ha) |
+| Forma | `CLASSE_FORMA` ou `FORMA` | Compacto (DI &lt; 1,5), Alongado (1,5 ≤ DI &lt; 2,0), Muito alongado (DI ≥ 2,0) |
+| Conectividade | `CLASSE_CONECTIVIDADE` ou `CONECTIVIDADE` | Alta (&lt; 100 m), Média (100–500 m), Baixa (≥ 500 m) |
 
-**Procedimento:**
-1. **Por tamanho:** Estilizar a camada `Fragmentos_MataNativa_BH_I_ES` pelo campo `CLASSE_TAMANHO` (ou `TAMANHO`) com cores distintas (ex.: gradiente do menor ao maior fragmento)
-2. **Por forma:** Estilizar pelo campo `CLASSE_FORMA` (ou `FORMA`) com paleta adequada (Compacto, Alongado, Muito alongado)
-3. **Por conectividade:** Estilizar pelo campo `CLASSE_CONECTIVIDADE` (ou `CONECTIVIDADE`) com cores que indiquem alta, média e baixa conectividade
+**Como foi feito (QGIS):** Painel de Camadas → clique direito na camada → *Propriedades* → *Simbologia* → *Categorizado* → campo desejado → *Classificar* → ajustar cores e rótulos. Os estilos podem ser salvos em arquivos .qml para reutilização.
 
-**Opcional:** Exportar cópias da camada para shapes/GeoPackages distintos (ex.: `Fragmentos_por_Tamanho.gpkg`, `Fragmentos_por_Forma.gpkg`, `Fragmentos_por_Conectividade.gpkg`) com estilos salvos (.qml) para uso em mapas temáticos.
-
-**Como fazer (QGIS):** Painel de Camadas → clique direito na camada → *Propriedades* → *Simbologia* → *Categorizado* → campo desejado → *Classificar* → ajustar cores e rótulos.
+**Opcional:** Exportar cópias da camada para GeoPackages distintos com estilos salvos (.qml) para uso em mapas temáticos.
 
 ---
 
-### Etapa 20. 📋 Construir os mapas com legendas adequadas
+### Etapa 20. Construir os mapas com legendas adequadas ✅
 
-**Objetivo:** Produzir mapas finais para relatório ou publicação, com layout, escala, norte, legenda e demais elementos cartográficos.
+**O que foi feito:** Produção dos mapas finais para relatório ou publicação, com layout, escala, norte, legenda e demais elementos cartográficos, utilizando as camadas estilizadas da Etapa 19 (tamanho, forma e conectividade).
 
-**Procedimento:**
-1. Abra o **Compositor de impressão** (Projeto > Novo layout de impressão)
-2. Adicione o mapa da área de estudo com as camadas estilizadas (Etapa 19)
-3. Inclua **legenda** com as classes de tamanho, forma e conectividade (conforme o mapa temático)
-4. Adicione **escala gráfica**, **rosa dos ventos** e **título**
-5. Salve o layout e exporte em PNG ou PDF para `figuras/` ou `resultados/`
+**Onde foram salvos:** Os mapas foram exportados para a pasta **`Resultados/Maps/`** do projeto (formato PNG ou PDF, conforme o caso).
 
-**Sugestão de mapas:**
-- Mapa 1: Fragmentos por tamanho (legenda: Muito pequeno, Pequeno, Médio, Grande, Muito grande)
-- Mapa 2: Fragmentos por forma (legenda: Compacto, Alongado, Muito alongado)
-- Mapa 3: Fragmentos por conectividade (legenda: Alta, Média, Baixa conectividade)
+**Mapas produzidos:**
+- Mapa por **tamanho** (legenda: Muito pequeno, Pequeno, Médio, Grande, Muito grande)
+- Mapa por **forma** (legenda: Compacto, Alongado, Muito alongado)
+- Mapa por **conectividade** (legenda: Alta, Média, Baixa conectividade)
 
-**Onde salvar:** `figuras/` ou `resultados/` conforme a estrutura do projeto.
+**Como foi feito (QGIS):** Compositor de impressão (Projeto > Novo layout de impressão) → adição do mapa com camadas estilizadas → legenda, escala gráfica, rosa dos ventos e título → exportação para `Resultados/Maps/`.
+
+---
+
+## 📋 Próximos passos
+
+(Nenhuma etapa pendente no momento.)
 
 ---
 
@@ -603,14 +607,15 @@ No histograma de densidade, as proporções ficam evidentes: grande parte dos fr
 | Fontes de dados e metadados | `docs/fontes-dados.md` |
 | Convenção de nomes dos arquivos | `docs/nomenclatura.md` |
 | Citações para relatórios | `docs/referencias.md` |
-| Bacia do Itabapoana (área de estudo) | `Dados/Recortes_Bacia/Bacia_BH_Itabapoana_AreaEstudo/` — shape: `Bacia_BH_Itabapoana_AreaEstudo_4674`; UTM: `Bacia_BH_Itabapoana_AreaEstudo_UTM.gpkg` |
-| Municípios do ES (completo) | `Dados/Dados_Brutos/ES_Municipios_2024_Completo/` — versão UTM: `Dados/Recortes_Bacia/Municipios_ES_Analise_UTM.gpkg` |
-| Limites estaduais | `Dados/Dados_Brutos/BR_UF_2024_Completo/` |
-| Todas as bacias (origem) | `Dados/Dados_Brutos/BaciasHidrograficas_Completo/` |
-| Uso e cobertura do solo ES 2019-2020 | `Dados/Dados_Brutos/ijsn_mapeamento_uso_solo_2019_2020/` |
-| Uso do solo recortado (Bacia Itabapoana ES) | `Dados/Recortes_Bacia/UsoSolo_BH_Itabapoana_ES_Recorte/UsoSolo_BH_Itabapoana_ES_Recorte_UTM.gpkg` |
-| Mata Nativa + Mata em Estágio Inicial (códigos 1 e 2, mesmo shape) | `Dados/Recortes_Bacia/MataNativa_BH_Itabapoana_ES_Extracao/` — shape: `MataNativa_BH_Itabapoana_ES_Extracao_UTM` |
-| Fragmentos de Mata Nativa (unificados, um polígono por fragmento) | `Dados/Fragmentos_Analise/Fragmentos_MataNativa_BH_I_ES.gpkg` |
-| Histograma de área (frequência e densidade) | `scripts/AnaliseEstatistica/histograma/` — `histograma_area_ha.png`, `histograma_area_ha_densidade.png` |
+| Bacia do Itabapoana (área de estudo) | `Projeto/Dados/Recortes_Bacia/Bacia_BH_Itabapoana_AreaEstudo/` — shape: `Bacia_BH_Itabapoana_AreaEstudo_4674`; UTM: `Bacia_BH_Itabapoana_AreaEstudo_UTM.gpkg` |
+| Municípios do ES (completo) | `Projeto/Dados/Dados_Brutos/ES_Municipios_2024_Completo/` — versão UTM: `Projeto/Dados/Recortes_Bacia/Municipios_ES_Analise_UTM.gpkg` |
+| Limites estaduais | `Projeto/Dados/Dados_Brutos/BR_UF_2024_Completo/` |
+| Todas as bacias (origem) | `Projeto/Dados/Dados_Brutos/BaciasHidrograficas_Completo/` |
+| Uso e cobertura do solo ES 2019-2020 | `Projeto/Dados/Dados_Brutos/ijsn_mapeamento_uso_solo_2019_2020/` |
+| Uso do solo recortado (Bacia Itabapoana ES) | `Projeto/Dados/Recortes_Bacia/UsoSolo_BH_Itabapoana_ES_Recorte/UsoSolo_BH_Itabapoana_ES_Recorte_UTM.gpkg` |
+| Mata Nativa + Mata em Estágio Inicial (códigos 1 e 2, mesmo shape) | `Projeto/Dados/Recortes_Bacia/MataNativa_BH_Itabapoana_ES_Extracao/` — shape: `MataNativa_BH_Itabapoana_ES_Extracao_UTM` |
+| Fragmentos de Mata Nativa (unificados, um polígono por fragmento) | `Projeto/Dados/Fragmentos_Analise/Fragmentos_MataNativa_BH_I_ES.gpkg` |
+| Mapas temáticos (tamanho, forma, conectividade) | `Resultados/Maps/` — PNG/PDF produzidos na Etapa 20 |
+| Histogramas (área, forma, conectividade, área nuclear) | `Resultados/Histogramas/` — PNGs de frequência e densidade; scripts em `scripts/AnaliseEstatistica/Histograma/` |
 
 ---

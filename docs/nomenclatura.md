@@ -1,64 +1,48 @@
-# Nomenclatura de Arquivos
+# Nomenclatura
 
-Convenção de nomes para arquivos e camadas do projeto.
+Convenção de nomes para arquivos e camadas no projeto Ecologia da Paisagem da Bacia do Itabapoana (ES).
 
----
+## Estrutura de pastas
 
-## Estrutura geral
+- **Projeto/Dados/Dados_Brutos/** – Camadas baixadas das fontes (IBGE, ANA, IJSN), sem alteração de SRC.
+- **Projeto/Dados/Recortes_Bacia/** – Camadas recortadas ou extraídas para a área da Bacia do Itabapoana (ES).
+- **Projeto/Dados/Fragmentos_Analise/** – Camada principal de fragmentos com métricas calculadas.
 
-### Dados brutos
+## Sufixo UTM
 
-Mantêm os nomes originais das fontes (IBGE, ANA, IJSN).
+Arquivos e camadas reprojetados para SIRGAS 2000 / UTM zone 24S (EPSG:31984) recebem o sufixo **`_UTM`**.
 
----
+Exemplos:
 
-## Recortes (padrão)
+- `Bacia_BH_Itabapoana_AreaEstudo_UTM.gpkg`
+- `UsoSolo_BH_Itabapoana_ES_Recorte_UTM.gpkg`
+- `MataNativa_BH_Itabapoana_ES_Extracao_UTM` (camada no projeto)
+- `Municipios_ES_Analise_UTM.gpkg`
 
-```
-[Dados]_[Recorte/Região]_[Objetivo]_[CRS]
-```
+## Padrão para recortes e extrações
 
-| Elemento | Descrição | Exemplos |
-|----------|-----------|----------|
-| **Dados** | Tipo de dado | `Bacia`, `Municipios`, `UsoSolo`, `MataNativa` |
-| **Recorte/Região** | Área de recorte | `BH_Itabapoana`, `BH_Itabapoana_ES`, `ES` |
-| **Objetivo** | Uso ou etapa | `AreaEstudo`, `Recorte`, `Extracao`, `Analise` |
-| **CRS** | `UTM` ou `4674` | `UTM` (EPSG:31984) ou `4674` (SIRGAS geográfico) |
+**Formato geral:** `[Dados]_[Recorte]_[Objetivo]_[CRS]`
 
----
+- **[Dados]** – Nome da base (ex.: Bacia, UsoSolo, MataNativa).
+- **[Recorte]** – Área de recorte (ex.: BH_Itabapoana_AreaEstudo, BH_Itabapoana_ES_Recorte).
+- **[Objetivo]** – Finalidade (ex.: AreaEstudo, Extracao).
+- **[CRS]** – Quando em UTM 24S: `_UTM` no nome do arquivo ou da camada.
 
-## Arquivos em Recortes_Bacia
+Exemplos:
 
-| Arquivo | Significado |
-|---------|-------------|
-| `Bacia_BH_Itabapoana_AreaEstudo_4674` | Bacia do Itabapoana, área de estudo, SIRGAS 2000 geográfico |
-| `Bacia_BH_Itabapoana_AreaEstudo_UTM` | Bacia do Itabapoana, área de estudo, UTM 24S |
-| `Municipios_ES_Analise_UTM` | Municípios do ES, reprojetados para análise |
-| `UsoSolo_BH_Itabapoana_ES_Recorte_UTM` | Uso do solo recortado pela bacia no ES |
-| `MataNativa_BH_Itabapoana_ES_Extracao_UTM` | Mata Nativa extraída (códigos 1 e 2) na bacia no ES |
+| Descrição                    | Nome do arquivo/camada                          |
+|-----------------------------|-------------------------------------------------|
+| Bacia do Itabapoana (UTM)   | `Bacia_BH_Itabapoana_AreaEstudo_UTM.gpkg`       |
+| Uso do solo recortado (UTM)| `UsoSolo_BH_Itabapoana_ES_Recorte_UTM.gpkg`     |
+| Mata Nativa extraída (UTM) | `MataNativa_BH_Itabapoana_ES_Extracao_UTM`      |
+| Fragmentos (camada final)   | `Fragmentos_MataNativa_BH_I_ES.gpkg`            |
 
----
+## Camadas no QGIS
 
-## Objetivos (sufixos)
+Os nomes das camadas no projeto QGIS seguem o nome do arquivo GeoPackage ou do shapefile. Quando há apenas uma camada por arquivo, o nome da camada costuma coincidir com o nome do arquivo (sem extensão).
 
-| Objetivo | Uso |
-|----------|-----|
-| `AreaEstudo` | Limite da área de estudo (ex.: bacia) |
-| `Recorte` | Camada recortada pela área de estudo |
-| `Extracao` | Seleção de classes (ex.: Mata Nativa) |
-| `Analise` | Camada reprojetada para análise |
+## Dados tabulares e resultados
 
----
-
-## Abreviações
-
-| Sigla | Significado |
-|-------|-------------|
-| BH | Bacia Hidrográfica |
-| ES | Espírito Santo |
-
----
-
-## Fragmentos (análise)
-
-A camada principal mantém o nome `Fragmentos_MataNativa_BH_I_ES.gpkg` (legado). Para novas versões, pode-se adotar `Fragmentos_MN_BH_Itabapoana_ES_UTM.gpkg`.
+- **data/** – CSV e tabelas exportadas (ex.: `MataNativa_Mesclagem_Fragmentos.csv`).
+- **Resultados/Histogramas/** – Gráficos gerados pelos scripts (ex.: `histograma_area_ha_densidade.png`).
+- **Resultados/Maps/** – Mapas temáticos (PDF e imagens).
